@@ -52,6 +52,8 @@ public class PMain2 {
 			}
 		}
 		System.out.printf("%d번 만에 정답!\n", cnt);
+		
+		//return (n1==n2); => 조건에 맞을 때 true값을 리턴, 조건에 맞지 않으면 false값 리턴
 	}
 
 	// main 함수
