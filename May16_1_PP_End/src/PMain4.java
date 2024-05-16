@@ -17,6 +17,10 @@ public class PMain4 {
 		Scanner k = new Scanner(System.in);
 		System.out.print("1.가위 2.바위 3.보 :");
 		int n = k.nextInt();
+		if (n < 1 || n > 3) {
+			System.out.println("다시입력하세요");
+			get_num();
+		}
 		return n;
 	}
 
@@ -44,16 +48,16 @@ public class PMain4 {
 		else if (com == 3)
 			com_answer = "보";
 
-		System.out.printf("player \t: %s\ncom \t: %s\n",player_answer,com_answer);
+		System.out.printf("player \t: %s\ncom \t: %s\n", player_answer, com_answer);
 	}
 
 	// 결과 비교 함수
 	public static String check_result(int player, int com) {
 
 		String result = null;
-		if (player == com) {
+		if (player == com)
 			result = "draw";
-		} else if ((player == 1 && com == 3) || (player == 2 && com == 1) || (player == 3 && com == 2))
+		else if ((player == 1 && com == 3) || (player == 2 && com == 1) || (player == 3 && com == 2))
 			result = "win";
 		else
 			result = "lose";
@@ -77,14 +81,13 @@ public class PMain4 {
 				System.out.println("LOSE!");
 				System.out.printf("%d 승!", win);
 				break;
-			}
-
-			else if (result.equals("win")) {
+			} else if (result.equals("win")) {
 				System.out.println("WIN!");
 				win++;
 			} else {
 				System.out.println("DRAW!");
 			}
+
 		}
 	}
 }
