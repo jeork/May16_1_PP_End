@@ -26,9 +26,6 @@ public class PMain1_1 {
 				n = user_n;
 		}
 		System.out.printf("숫자\t: %d\n", n);
-		
-		
-
 	}
 
 }
