@@ -16,6 +16,7 @@ public class PMain5 {
 
 		for (int i = 0; i < lotto_num.length; i++) {
 			lotto_num[i] = r.nextInt(45) + 1;
+			// 앞의 배열 요소와 뒤의 배열 요소의 값 구분하기 위해 반복문 추가
 			for (int j = 0; j < i; j++) {
 				if (lotto_num[i] == lotto_num[j])
 					i--;
@@ -28,10 +29,16 @@ public class PMain5 {
 	public static int[] my_num() {
 		Scanner k = new Scanner(System.in);
 		int[] my_num = new int[6];
+		
 		for (int i = 0; i < my_num.length; i++) {
 			System.out.print("번호 입력 :");
 			my_num[i] = k.nextInt();
+			if (my_num[i]<1||my_num[i]>45) {
+				System.err.println("다시 입력하세요");
+				i--;				
+			}
 		}
+		
 		Arrays.sort(my_num);
 		System.out.print("나의 번호 : ");
 		for (int i = 0; i < my_num.length; i++) {
@@ -42,6 +49,8 @@ public class PMain5 {
 	}
 
 	// 당첨 확인 함수
+	// 입력한 번호와 랜덤으로뽑힌 번호를 모든 경우의 수로 값이 같은지 비교
+	// 같은 경우에는 카운트 올리기
 	public static void check_lotto(int[] lotto_num, int[] my_num) {
 		int cnt = 0;
 		for (int i = 0; i < lotto_num.length; i++) {
